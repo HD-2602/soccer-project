@@ -1,0 +1,39 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-9 mx-auto text-center">
+          <h1 class="text-white">Welcome...</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="container site-section">
+    <div class="row">
+        <div class="custom-media d-flex">
+            <div class="img mr-4">
+              <img [src]="userProfile.avatar" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-lg-12">
+                <form [formGroup]="profileForm">
+                  <div class="form-group">
+                    <input  type="text" class="form-control" formControlName="firstName" [(ngModel)]="userProfile.firstName" placeholder="First Name">
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" formControlName="lastName" [(ngModel)]="userProfile.lastName" placeholder="Last Name">
+                    </div>
+                  <div class="form-group">
+      
+                      <input type="email" readonly class="form-control" formControlName="email" [(ngModel)]="userProfile.email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" readonly class="form-control" formControlName="pwd" [(ngModel)]="userProfile.pwd" placeholder="Password">
+                    </div>
+                  <div class="form-group text-center">
+                      <input type="submit" class="btn btn-primary py-3 px-5" (click)="edit()" [disabled]="profileForm.invalid" value="Edit">          
+                    </div>
+                </form>  
+              </div>
+          </div>
+    </div>
+  </div>
+
