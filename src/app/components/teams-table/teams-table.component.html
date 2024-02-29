@@ -9,9 +9,9 @@
     </tr>
     <tr *ngFor="let t of teamsTab">
         <th>{{t._id}}</th>
-        <th>{{t.name}}</th>
-        <th>{{t.stadium}}</th>
-        <th>{{t.owner}}</th>
+        <th>{{t.teamName}}</th>
+        <th>{{t.teamStadium}}</th>
+        <th>{{t.teamOwner}}</th>
         <th>
             <button type="button" class="btn btn-primary" (click)="goToInfo(t._id)">Display</button>
             <button type="button" class="btn btn-warning" (click)="editTeam()">Edit</button>

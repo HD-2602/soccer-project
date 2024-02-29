@@ -18,7 +18,8 @@ export class TeamsTableComponent implements OnInit {
     
     this.teamService.getAllTeams().subscribe((response)=>
     {
-      console.log("Here responce from BE", response);
+      console.log("Here responce from BE", response.teams);
+      this.teamsTab= response.teams;
     }); 
   }
   deleteTeam(selectedId){
