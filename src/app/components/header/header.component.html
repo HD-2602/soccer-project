@@ -25,6 +25,7 @@
               <li><a routerLink="matches" class="nav-link">Matches</a></li>
               <li><a routerLink="players" class="nav-link">Players</a></li>
               <li *ngIf="isLoggedIn()"><a class="nav-link">Welcom {{decodedToken.fName}} {{decodedToken.lName}}</a></li>
+              <li *ngIf="isLoggedIn()"><a routerLink="profile" class="nav-link">Profile</a></li>
               <li *ngIf="isLoggedIn() && decodedToken.role == 'admin'" >
                 <div class="dropdown">
                   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

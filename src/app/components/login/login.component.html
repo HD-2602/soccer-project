@@ -19,25 +19,21 @@
           <div *ngIf="loginForm.controls['email'].invalid &&
             (loginForm.controls['email'].touched ||
             loginForm.controls['email'].dirty)">
-            <div *ngIf="loginForm.controls['email'].errors.required">
+            <div *ngIf="loginForm.controls['email'].errors.required" class="text-danger">
               Email is required
             </div>
-            <div *ngIf="loginForm.controls['email'].errors.email">
+            <div *ngIf="loginForm.controls['email'].errors.email" class="text-danger">
               Format Email Invalid
             </div>
           </div>
           <div class="form-group">
             <input type="password" class="form-control" formControlName="pwd" placeholder="Password">
           </div>
-          <div *ngIf="loginForm.controls['pwd'].invalid &&
-            (loginForm.controls['pwd'].touched ||
-            loginForm.controls['pwd'].dirty)">
-
-            <div *ngIf="loginForm.controls['pwd'].errors.required">
+          <div *ngIf="loginForm.controls['pwd'].invalid && loginForm.controls['pwd'].touched">
+            <div *ngIf="loginForm.controls['pwd'].errors.required" class="text-danger">
               Password is required
             </div>
           </div>
-
           <div class="form-group">
             <input type="submit" (click)="login()" [disabled]="loginForm.invalid" class="btn btn-primary py-3 px-5"
               value="login">

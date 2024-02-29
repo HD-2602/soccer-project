@@ -28,7 +28,7 @@ this.userService.login(this.loginForm.value).subscribe(
     console.log("Here response after login", response);
     if (response.msg == "2") {
       sessionStorage.setItem('jwt', response.user);
-      this.router.navigate([`profile/${this.loginForm.value.email}`]);
+      this.router.navigate(["profile"]);
     } else {
       this.errorMsg = "Please CheckEmail/Pwd";
     }

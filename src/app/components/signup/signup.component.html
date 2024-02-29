@@ -19,10 +19,10 @@
             <div *ngIf="signForm.controls['firstName'].invalid &&
             (signForm.controls['firstName'].touched ||
             signForm.controls['firstName'].dirty)">
-            <div *ngIf="signForm.controls['firstName'].errors.required">
+            <div *ngIf="signForm.controls['firstName'].errors.required" class="text-danger">
               First Name is required
             </div>
-            <div *ngIf="signForm.controls['firstName'].errors.minlength">
+            <div *ngIf="signForm.controls['firstName'].errors.minlength" class="text-danger">
               First Name must have at least 3 chars
             </div>
             </div>
@@ -32,10 +32,10 @@
               <div *ngIf="signForm.controls['lastName'].invalid &&
             (signForm.controls['firstName'].touched ||
             signForm.controls['firstName'].dirty)">
-            <div *ngIf="signForm.controls['lastName'].errors.required">
+            <div *ngIf="signForm.controls['lastName'].errors.required" class="text-danger">
               Last Name is required
             </div>
-            <div *ngIf="signForm.controls['lastName'].errors.minlength">
+            <div *ngIf="signForm.controls['lastName'].errors.minlength" class="text-danger">
               Last Name must have at least 5 chars
             </div>
             </div>
@@ -46,10 +46,10 @@
               <div *ngIf="signForm.controls['email'].invalid &&
             (signForm.controls['email'].touched ||
             signForm.controls['email'].dirty)">
-            <div *ngIf="signForm.controls['email'].errors.required">
+            <div *ngIf="signForm.controls['email'].errors.required" class="text-danger">
               Email is required
             </div>
-            <div *ngIf="signForm.controls['email'].errors.email">
+            <div *ngIf="signForm.controls['email'].errors.email" class="text-danger">
               Format Email Invalid
             </div>
             </div>
@@ -59,13 +59,13 @@
               <div *ngIf="signForm.controls['pwd'].invalid &&
             (signForm.controls['pwd'].touched ||
             signForm.controls['pwd'].dirty)">
-            <div *ngIf="signForm.controls['pwd'].errors.required">
+            <div *ngIf="signForm.controls['pwd'].errors.required" class="text-danger">
               Password is required
             </div>
-            <div *ngIf="signForm.controls['pwd'].errors.minlength">
+            <div *ngIf="signForm.controls['pwd'].errors.minlength" class="text-danger">
               Password must have at least 6 chars
             </div>
-             <div *ngIf="signForm.controls['pwd'].errors.maxlength">
+             <div *ngIf="signForm.controls['pwd'].errors.maxlength" class="text-danger">
               Password must have at most 12 chars
             </div>
             </div>

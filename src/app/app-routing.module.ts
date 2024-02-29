@@ -39,7 +39,7 @@ const routes: Routes = [
   {path:"weather", component: WeatherComponent},
   {path:"addPlayer", component: PlayerFormComponent},
   {path:"editPlayer/:id", component: PlayerFormComponent},
-  {path:"profile/:email", component: ProfileComponent},
+  {path:"profile", component: ProfileComponent},
 
   
 ];
