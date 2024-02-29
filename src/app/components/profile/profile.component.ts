@@ -14,7 +14,6 @@ export class ProfileComponent implements OnInit {
   userProfile: any;
   token: string;
   decodedToken: any;
-  fName: string;
 
   constructor(private formBuilder: FormBuilder,
     private userService: UserService
@@ -23,7 +22,6 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.token= sessionStorage.getItem("jwt");
     this.decodedToken= this.decodeToken(this.token);
-    this.fName= this.decodedToken.fName;
 
     this.profileForm = this.formBuilder.group({
       firstName: [""],
@@ -31,11 +29,12 @@ export class ProfileComponent implements OnInit {
       email: [""],
       pwd: [""],
     });
-    console.log("here email", this.decodedToken.email);
+  
     this.userService.getUserByEmail(this.decodedToken.email).subscribe(
       (response) => {
         console.log("Here response From BE", response.user);
         this.userProfile = response.user;
+        
       })
   }
   edit() {
