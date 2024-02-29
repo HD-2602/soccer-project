@@ -1,3 +1,4 @@
+import { PlayerService } from './../../services/player.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./players.component.css']
 })
 export class PlayersComponent implements OnInit {
-  players: any=[{name:"Messi", position:"ATK", nbr:10, img:"assets/images/img_3.jpg"},
-  {name:"CR7", position:"GK", nbr:7, img:"assets/images/img_2.jpg"}];
+  players: any =[];
 
-  constructor() { }
+  constructor( private playerService: PlayerService) { }
 
   ngOnInit() {
+    this.playerService.getAllPlayers().subscribe(
+      (response)=>{
+        console.log("Here response from BE", response.playersTab);
+        this.players= response.playersTab;
+      }
+    );
   }
 
 }
